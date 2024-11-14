@@ -1,6 +1,6 @@
 // login_controller.dart
 import 'package:get/get.dart';
-import 'package:untitled/ApiService.dart';
+import 'package:post_api/ApiService.dart';
 
 
 class LoginController extends GetxController {

@@ -1,4 +1,4 @@
-name: untitled
+name: post_api
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -55,12 +55,50 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: NunitoSans
+      fonts:
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-ExtraLight.ttf
+          weight: 200
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-Light.ttf
+          weight: 300
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-Regular.ttf
+          weight: 400
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-Medium.ttf
+          weight: 500
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-SemiBold.ttf
+          weight: 600
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-Bold.ttf
+          weight: 700
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-ExtraBold.ttf
+          weight: 800
+        - asset: assets/font-primary/nunito_sans/NunitoSans_7pt-Black.ttf
+          weight: 900
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+    - family: Montserrat
+      fonts:
+        - asset: assets/font-primary/montserrat/Montserrat-Thin.ttf
+          weight: 100
+        - asset: assets/font-primary/montserrat/Montserrat-ExtraLight.ttf
+          weight: 200
+        - asset: assets/font-primary/montserrat/Montserrat-Light.ttf
+          weight: 300
+        - asset: assets/font-primary/montserrat/Montserrat-Regular.ttf
+          weight: 400
+        - asset: assets/font-primary/montserrat/Montserrat-Medium.ttf
+          weight: 500
+        - asset: assets/font-primary/montserrat/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/font-primary/montserrat/Montserrat-Bold.ttf
+          weight: 700
+        - asset: assets/font-primary/montserrat/Montserrat-ExtraBold.ttf
+          weight: 800
+
+
   uses-material-design: true
-
+  assets:
+    - assets/images/vibe.jpg
+    - assets/images/vibe.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
