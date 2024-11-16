@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:post_api/detail/detail_page_one%20direction.dart';
 import 'package:post_api/page/login_page.dart';
 import 'package:post_api/page/responsive_layout.dart';
 import 'bindings/bindings.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         //list all page here
         GetPage(name: '/home', page: () => LoginPage()),
+        GetPage(name: '/detailonedirection', page: () => DetailPageOnedirection()),
         GetPage(name: '/dashboard', page: () =>LayoutBuilder(builder: (context, constraints) {
           controllers.updateScreenWidth(constraints.maxWidth);
           return ResponsiveLayout();

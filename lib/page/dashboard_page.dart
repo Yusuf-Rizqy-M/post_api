@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:post_api/controller/dashboard_controllers.dart';
 import 'package:post_api/menus/favorite_menu.dart';
 import 'package:post_api/menus/home_menu_mobile.dart';
-import 'package:post_api/menus/order_menu.dart';
+import 'package:post_api/menus/popular_menu.dart';
 import 'package:post_api/menus/profile_menu.dart';
 
 
@@ -13,7 +13,7 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final DashboardControllers dashboardControllers = Get.find();
-    final List<Widget> menus = [HomeMenuMobile(), OrderMenu(),FavoriteMenu(), ProfileMenu()];
+    final List<Widget> menus = [HomeMenuMobile(), PopularMenu(),FavoriteMenu(), ProfileMenu()];
 
     return Obx(() {
       return Scaffold(
@@ -31,8 +31,8 @@ class DashboardPage extends StatelessWidget {
               label: "home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag),
-              label: "order",
+              icon: Icon(Icons.trending_up),
+              label: "popular",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
