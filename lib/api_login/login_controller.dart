@@ -1,6 +1,6 @@
 // login_controller.dart
 import 'package:get/get.dart';
-import 'package:post_api/ApiService.dart';
+import 'package:post_api/api_login/ApiService.dart';
 
 
 class LoginController extends GetxController {
@@ -8,7 +8,7 @@ class LoginController extends GetxController {
   var loginStatus = "".obs;
   var token = "".obs;
 
-  final ApiService _loginService = ApiService();
+  final ApiServiceLogin _loginService = ApiServiceLogin();
 
   Future<void> login(String username, String password) async {
     isLoading.value = true;

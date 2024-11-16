@@ -2,7 +2,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class ApiService {
+class ApiServiceLogin {
   final String _baseUrl = "https://mediadwi.com/api/latihan/login";
 
   Future<Map<String, dynamic>> login(String username, String password) async {

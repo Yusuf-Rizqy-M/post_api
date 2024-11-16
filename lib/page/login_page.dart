@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controller/LoginController.dart';
+import '../api_login/login_controller.dart';
 import '../widget/my_text.dart';
 import '../widget/my_textfield.dart';
 
@@ -51,11 +51,11 @@ class LoginPage extends StatelessWidget {
             Obx(() => ElevatedButton(
               style: ButtonStyle(
                 backgroundColor:
-                MaterialStateProperty.all<Color>(Colors.blueAccent),
-                padding: MaterialStateProperty.all<EdgeInsets>(
+                WidgetStateProperty.all<Color>(Colors.blueAccent),
+                padding: WidgetStateProperty.all<EdgeInsets>(
                   EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
                 ),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
@@ -80,8 +80,7 @@ class LoginPage extends StatelessWidget {
                     passwordController.text);
                 if (controller.loginStatus.value ==
                     "Login success") {
-                  Get.toNamed('/dashboard');
-                } else {
+                  Get.offNamed('/dashboard');
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: MyText(
@@ -90,6 +89,17 @@ class LoginPage extends StatelessWidget {
                         colors: Colors.white,
                       ),
                       backgroundColor: Colors.green,
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: MyText(
+                        hintText: controller.loginStatus.value,
+                        fontSize: 16,
+                        colors: Colors.white,
+                      ),
+                      backgroundColor: Colors.red,
                     ),
                   );
                 }

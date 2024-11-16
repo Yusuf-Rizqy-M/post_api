@@ -6,7 +6,6 @@ import '../widget/my_button.dart';
 import '../widget/my_image.dart';
 import '../widget/my_text.dart';
 
-
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({super.key});
 
@@ -25,7 +24,7 @@ class ProfileMenu extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     MyImage(
-                      imageName: 'assets/images/akmal.png',
+                      imageName: 'assets/images/azazel.jpg',
                       width: 120,
                       height: 120,
                       borderRadius: 10,
@@ -38,7 +37,7 @@ class ProfileMenu extends StatelessWidget {
                         MyText(
                           hintText: 'Yusuf',
                           fontSize: 26,
-                          colors: Colors.white,
+                          colors: Colors.black,
                           fontWeight: FontWeight.w700,
                           fontFamily: 'Poppins',
                         ),
@@ -46,25 +45,27 @@ class ProfileMenu extends StatelessWidget {
                         Row(
                           children: [
                             MyButton(
-                                textButton: 'Edit profile',
-                                backgroundColor: Colors.brown,
-                                textColor: Colors.white,
-                                onPressed: () {},
-                                borderRadius: BorderRadius.circular(20),
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                margin: EdgeInsets.only(right: 3)),
+                              textButton: 'Edit profile',
+                              backgroundColor: Colors.teal,
+                              textColor: Colors.white,
+                              onPressed: () {},
+                              borderRadius: BorderRadius.circular(20),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              margin: EdgeInsets.only(right: 3),
+                            ),
                             SizedBox(width: 10),
                             // Promo Button
                             MyButton(
-                                textButton: 'Promo',
-                                backgroundColor: Colors.green,
-                                textColor: Colors.white,
-                                onPressed: () {},
-                                borderRadius: BorderRadius.circular(20),
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                margin: EdgeInsets.only(right: 1)),
+                              textButton: 'Albums',
+                              backgroundColor: Colors.blueAccent,
+                              textColor: Colors.white,
+                              onPressed: () {},
+                              borderRadius: BorderRadius.circular(20),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              margin: EdgeInsets.only(right: 1),
+                            ),
                           ],
                         ),
                       ],
@@ -72,26 +73,23 @@ class ProfileMenu extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
+              SizedBox(height: 30),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      MyText(
-                        hintText: 'Pilihan fitur',
-                        fontSize: 14,
-                        colors: Colors.white,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w700,
-                      )
-                    ]),
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MyText(
+                      hintText: 'Pilihan fitur',
+                      fontSize: 14,
+                      colors: Colors.black,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Row(
@@ -125,27 +123,23 @@ class ProfileMenu extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 50,
-              ),
+              SizedBox(height: 50),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      MyText(
-                        hintText: 'Chat kamu',
-                        fontSize: 14,
-                        colors: Colors.white,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w800,
-                      )
-                    ]
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MyText(
+                      hintText: 'Pesan kamu',
+                      fontSize: 14,
+                      colors: Colors.black,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Row(
@@ -155,25 +149,25 @@ class ProfileMenu extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       margin: EdgeInsets.only(right: 20),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.blueGrey,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
-                        Icons.chat,
-                        color: Colors.blue,
+                        Icons.album,
+                        color: Colors.white,
                         size: 20,
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.only(bottom: 25),
                       child: MyText(
-                        hintText: 'KL later',
+                        hintText: 'Chat Bot',
                         fontSize: 14,
-                        colors: Colors.white,
+                        colors: Colors.black,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w600,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -181,7 +175,7 @@ class ProfileMenu extends StatelessWidget {
                 child: MyButton(
                   margin: EdgeInsets.only(top: 200),
                   textButton: 'Logout',
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.blueAccent,
                   textColor: Colors.white,
                   onPressed: () {
                     Get.toNamed('/home');

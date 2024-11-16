@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../controller/dashboard_controllers.dart';
 import '../menus/favorite_menu.dart';
 import '../menus/home_menu_tablet.dart';
-import '../menus/order_menu.dart';
+import '../menus/popular_menu.dart';
 import '../menus/profile_menu.dart';
 
 
@@ -15,7 +15,7 @@ class DashboardPageRail extends StatelessWidget {
     final DashboardControllers navController = Get.find();
     final List<Widget> menus = [
       HomeMenuTablet(),
-      OrderMenu(),
+      PopularMenu(),
       FavoriteMenu(),
       ProfileMenu()
     ];
@@ -28,7 +28,7 @@ class DashboardPageRail extends StatelessWidget {
             onDestinationSelected: (int index) {
               navController.changeMenu(index);
             },
-            selectedIconTheme: IconThemeData(color: Colors.orange),
+            selectedIconTheme: IconThemeData(color: Colors.blueAccent),
             unselectedIconTheme: IconThemeData(color: Colors.grey),
             indicatorColor: Colors.white,
             destinations: [
@@ -37,7 +37,7 @@ class DashboardPageRail extends StatelessWidget {
                 label: Text(
                   "Home",
                   style: TextStyle(
-                    color: navController.selectedindex.value == 0 ? Colors.orange : Colors.grey,
+                    color: navController.selectedindex.value == 0 ? Colors.blueAccent : Colors.grey,
                   ),
                 ),
               ),
@@ -46,7 +46,7 @@ class DashboardPageRail extends StatelessWidget {
                 label: Text(
                   "Order",
                   style: TextStyle(
-                    color: navController.selectedindex.value == 1 ? Colors.orange : Colors.grey,
+                    color: navController.selectedindex.value == 1 ? Colors.blueAccent : Colors.grey,
                   ),
                 ),
               ),
@@ -55,7 +55,7 @@ class DashboardPageRail extends StatelessWidget {
                 label: Text(
                   "Favorite",
                   style: TextStyle(
-                    color: navController.selectedindex.value == 2 ? Colors.orange : Colors.grey,
+                    color: navController.selectedindex.value == 2 ? Colors.blueAccent : Colors.grey,
                   ),
                 ),
               ),
@@ -64,7 +64,7 @@ class DashboardPageRail extends StatelessWidget {
                 label: Text(
                   "Profile",
                   style: TextStyle(
-                    color: navController.selectedindex.value == 3 ? Colors.orange : Colors.grey,
+                    color: navController.selectedindex.value == 3 ? Colors.blueAccent : Colors.grey,
                   ),
                 ),
               ),
