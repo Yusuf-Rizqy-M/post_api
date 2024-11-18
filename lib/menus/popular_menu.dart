@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:post_api/item_artist.dart';
+import 'package:post_api/model/item_artist.dart';
 import 'package:post_api/model/modelartist.dart';
 
 import '../widget/my_text.dart';

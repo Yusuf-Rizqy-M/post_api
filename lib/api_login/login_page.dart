@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../api_login/login_controller.dart';
+import 'login_controller.dart';
 import '../widget/my_text.dart';
 import '../widget/my_textfield.dart';
 
@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView( // Mengganti Column dengan SingleChildScrollView
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,20 +26,20 @@ class LoginPage extends StatelessWidget {
               height: 250,
             ),
             Center(
-                child: MyText(
-                  hintText: 'Jadikan Musik Bagian dari Hidup Anda.',
-                  fontSize: 18,
-                  colors: Colors.grey[700]!,
-                  fontFamily: 'NunitoSans',
-                  textAlign: TextAlign.center,
-                )),
+              child: MyText(
+                hintText: 'Jadikan Musik Bagian dari Hidup Anda.',
+                fontSize: 18,
+                colors: Colors.grey[700]!,
+                fontFamily: 'NunitoSans',
+                textAlign: TextAlign.center,
+              ),
+            ),
             SizedBox(height: 10),
             MyTextField(
               hintText: 'Username',
               controller: usernameController,
               icon: Icons.person_outline,
             ),
-
             MyTextField(
               hintText: 'Password',
               isPassword: true,
@@ -47,11 +47,9 @@ class LoginPage extends StatelessWidget {
               icon: Icons.lock_outline,
             ),
             SizedBox(height: 16),
-            // Login Button
             Obx(() => ElevatedButton(
               style: ButtonStyle(
-                backgroundColor:
-                WidgetStateProperty.all<Color>(Colors.blueAccent),
+                backgroundColor: WidgetStateProperty.all<Color>(Colors.blueAccent),
                 padding: WidgetStateProperty.all<EdgeInsets>(
                   EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
                 ),
@@ -64,8 +62,7 @@ class LoginPage extends StatelessWidget {
               onPressed: controller.isLoading.value
                   ? null
                   : () async {
-                if (usernameController.text.isEmpty ||
-                    passwordController.text.isEmpty) {
+                if (usernameController.text.isEmpty || passwordController.text.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: MyText(
@@ -76,33 +73,23 @@ class LoginPage extends StatelessWidget {
                       backgroundColor: Colors.redAccent,
                     ),
                   );
-                } else {await controller.login(usernameController.text,
-                    passwordController.text);
-                if (controller.loginStatus.value ==
-                    "Login success") {
-                  Get.offNamed('/dashboard');
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: MyText(
-                        hintText: controller.loginStatus.value,
-                        fontSize: 16,
-                        colors: Colors.white,
-                      ),
-                      backgroundColor: Colors.green,
-                    ),
-                  );
                 } else {
+                  await controller.login(usernameController.text, passwordController.text);
+                  final message = controller.loginStatus.value;
+                  final isSuccess = message == "Login success";
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: MyText(
-                        hintText: controller.loginStatus.value,
+                        hintText: message,
                         fontSize: 16,
                         colors: Colors.white,
                       ),
-                      backgroundColor: Colors.red,
+                      backgroundColor: isSuccess ? Colors.green : Colors.red,
                     ),
                   );
-                }
+                  if (isSuccess) {
+                    Get.offNamed('/dashboard');
+                  }
                 }
               },
               child: controller.isLoading.value
@@ -117,17 +104,21 @@ class LoginPage extends StatelessWidget {
               ),
             )),
             SizedBox(height: 10),
-            Container(
-              margin: EdgeInsets.only(left: 270),
-              child: MyText(
-                hintText: "Forgot Password?",
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                colors: Colors.black,
+            Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onTap: () {
+                  // Tambahkan navigasi ke halaman lupa password
+                },
+                child: MyText(
+                  hintText: "Forgot Password?",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  colors: Colors.black,
+                ),
               ),
             ),
             SizedBox(height: 100),
-            // Sign Up Text
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -138,7 +129,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-
+                    Get.toNamed("/regis");
                   },
                   child: MyText(
                     hintText: 'Sign Up',
@@ -150,19 +141,18 @@ class LoginPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 10),
-            // Social Media Login
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
                   onPressed: () {
-                    // Aksi login dengan Google
+                    // Aksi login dengan TikTok
                   },
                   icon: Icon(Icons.tiktok, color: Colors.black),
                 ),
                 IconButton(
                   onPressed: () {
-                    // Aksi login dengan Apple
+                    // Aksi login dengan Facebook
                   },
                   icon: Icon(Icons.facebook, color: Colors.black),
                 ),
