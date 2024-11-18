@@ -40,7 +40,7 @@ class _MyTextFieldState extends State<MyTextField> {
               ? IconButton(
             icon: Icon(
               _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-              color: Colors.grey,
+              color: Colors.blueGrey,
             ),
             onPressed: () {
               setState(() {
@@ -50,7 +50,7 @@ class _MyTextFieldState extends State<MyTextField> {
           )
               : null,
           filled: true,
-          fillColor: Colors.grey[200],
+          fillColor: Colors.blue[100],
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: BorderSide.none,

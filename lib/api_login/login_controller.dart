@@ -1,24 +1,23 @@
-// login_controller.dart
 import 'package:get/get.dart';
-import 'package:post_api/api_login/ApiService.dart';
-
+import 'login_model.dart';
+import 'login_service.dart';
 
 class LoginController extends GetxController {
   var isLoading = false.obs;
   var loginStatus = "".obs;
   var token = "".obs;
 
-  final ApiServiceLogin _loginService = ApiServiceLogin();
+  final LoginService _loginService = LoginService();
 
   Future<void> login(String username, String password) async {
     isLoading.value = true;
     try {
-      final response = await _loginService.login(username, password);
-      if (response["status"] == true) {
-        loginStatus.value = response["message"];
-        token.value = response["token"];
+      final LoginModel response = await _loginService.login(username, password);
+      if (response.status) {
+        loginStatus.value = response.message;
+        token.value = response.token;
       } else {
-        loginStatus.value = "Login failed";
+        loginStatus.value = response.message;
       }
     } catch (e) {
       loginStatus.value = "Error: ${e.toString()}";
